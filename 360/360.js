@@ -7,7 +7,12 @@ window.onload=function(){
         document.onmousemove=function(ev){
             var oEvent=ev||event;
             x=oEvent.clientX-disX;
-            oImg.src="img/miaov ("+x%77+").jpg"
+            if(x>0){
+                oImg.src="img/miaov ("+x%77+").jpg"
+            }else {
+                var y=x+-Math.floor(x/77)*77;
+                oImg.src="img/miaov ("+y+").jpg"
+            }
 
             return false
 
