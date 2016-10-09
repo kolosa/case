@@ -7,21 +7,22 @@ window.onload=function(){
         document.onmousemove=function(ev){
             var oEvent=ev||event;
             x=oEvent.clientX-disX;
-            if(x>0){
-                oImg.src="img/miaov ("+x%77+").jpg"
+            var l=parseInt(-x/10);
+            if(l>0){
+                oImg.src="img/miaov ("+l%77+").jpg";
             }else {
-                var y=x+-Math.floor(x/77)*77;
-                oImg.src="img/miaov ("+y+").jpg"
+                var y=l+-Math.floor(l/77)*77;
+                oImg.src="img/miaov ("+y+").jpg";
             }
 
-            return false
+            return false;
 
-        }
+        };
         document.onmouseup=function(){
             document.onmousemove=null;
             document.onmouseup=null;
-        }
+        };
         return false
     }
-}
+};
 
