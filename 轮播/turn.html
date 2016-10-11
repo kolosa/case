@@ -13,41 +13,58 @@
             width: 100%;
             height: 570px;
         }
+        .parent{
+            position:absolute;
+            left:50%;
+        }
         .aImg{
-            border: solid 2px;
             position:absolute;
             width: 1600px;
             height: 520px;
-            margin-left: 150px;;
+            left: -800px;
             display: none;
-        }
-        .on{
-            display: block;
         }
         .turn{
             width: 100%;
             position: absolute;
-
-        }
-        .turn img{
-            width: 100%;
-            display: none;
             z-index: -1;
         }
-        #on{
+        .on{
             display: block;
         }
         .little{
             overflow: hidden;
-            width: 560px;
+            position: absolute;
             height: 70px;
             margin-left: 35%;
+            bottom: 5%;
+            z-index: 1;
+            width: 560px;
         }
-        .little ul{
-        }
+
         .little li{
             list-style: none;
             float: left;
+        }
+        .left{
+            position: absolute;
+            background: url(img/le.jpg);
+            width: 60px;
+            height: 58px;
+            z-index: 0;
+            bottom: 6%;
+            margin-left: 30%;
+            opacity: 0.5;
+        }
+        .right{
+            position: absolute;
+            background: url(img/ri.jpg);
+            width: 60px;
+            height: 56px;
+            z-index: 0;
+            bottom: 6%;
+            margin-left: 71%;
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -56,28 +73,35 @@
 <!--di.main>div.aImg[style="background:url(img/title$.jpg)]*9-->
 <!--di.main>div.aImg[style="background:url(img/title$.jpg)]*9-->
 <div class="main">
-    <div class="aImg on" style="background:url(img/title1.jpg)no-repeat "></div>
-    <div class="aImg" style="background:url(img/title2.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title3.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title4.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title5.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title6.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title7.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title8.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title9.jpg)no-repeat"></div>
-    <div class="little">
-        <ul>
-            <li class="iImg"><img src="img/little1.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little2.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little3.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little4.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little5.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little6.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little7.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little8.jpg" alt="" title=""></li>
-            <li class="iImg"><img src="img/little9.jpg" alt="" title=""></li>
-        </ul>
+    <div class="parent">
+        <div class="aImg on" style="background:url(img/title1.jpg)no-repeat ">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="little">
+                <ul>
+                    <li class="iImg"><img src="img/little1.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little2.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little3.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little4.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little5.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little6.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little7.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little8.jpg" alt="" title=""></li>
+                    <li class="iImg"><img src="img/little9.jpg" alt="" title=""></li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <!--<div class="aImg" style="background:url(img/title2.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title3.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title4.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title5.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title6.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title7.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title8.jpg)no-repeat"></div>-->
+    <!--<div class="aImg" style="background:url(img/title9.jpg)no-repeat"></div>-->
+
 </div>
 
 <!--<div class="main">-->
