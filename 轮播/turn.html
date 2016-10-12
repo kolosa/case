@@ -11,11 +11,13 @@
         #main{
             position: relative;
             height: 570px;
+            width: 100%;
         }
         .parent{
             position:absolute;
             left:50%;
             height: 570px;
+            width: 100%;
         }
         .aImg{
             position:absolute;
@@ -24,6 +26,7 @@
             z-index: -1;
             left: -800px;
             opacity: 0;
+            list-style: none;
         }
         .on{
             position:absolute;
@@ -33,14 +36,35 @@
             opacity: 1;
             z-index: 0;
         }
+        .wrapper{
+            position:absolute;
+            height: 520px;
+            left: -900px;
+        }
+
+        .wrapper li{
+            position:absolute;
+            width:100%;
+            list-style: none;
+            display:  none;
+        }
+        .wrapper li.one{
+            display: block;
+        }
+        .wrapper li a{
+            position:absolute;
+            display:block;
+            width: 100%;
+            height: 414px;
+        }
         .little{
             overflow: hidden;
             position:absolute;
             height: 70px;
             bottom: 10%;
             z-index: 1;
-            left: -300px;
-            width: 565px;
+            left: -350px;
+            width: 660px;
         }
         .border{
             border: solid 2px #fff;
@@ -49,6 +73,7 @@
         .little li{
             list-style: none;
             float: left;
+            margin-left: 20px;
         }
         .left {
             position: absolute;
@@ -57,8 +82,8 @@
             height: 58px;
             z-index: 0;
             bottom:11%;
-            left: -400px;
-            opacity:1;
+            left: -500px;
+            opacity:0.4;
         }
         .right{
             position: absolute;
@@ -67,7 +92,7 @@
             height: 56px;
             z-index: 0;
             bottom: 11%;
-            left: 300px;
+            left: 400px;
             opacity: 0.4;
         }
     </style>
@@ -77,43 +102,65 @@
 
 <div id="main">
 <div class="parent">
-    <div class="aImg" style="background:url(img/title1.jpg)no-repeat ">
-        <ul class="aImgti">
-            <li class="aImgti-1"></li>
-            <li class="aImgti-2"></li>
-            <li class="aImgti-3"></li>
-            <li class="aImgti-4"></li>
-            <li class="aImgti-5"></li>
-            <li class="aImgti-6"></li>
-            <li class="aImgti-7"></li>
-            <li class="aImgti-8"></li>
-            <li class="aImgti-9"></li>
+    <div class="allImg">
+        <ul class="Imgti">
+            <li class="aImg on" style="background:url(img/title1.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title2.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title3.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title4.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title5.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title6.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title7.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title8.jpg)no-repeat"></li>
+            <li class="aImg" style="background:url(img/title9.jpg)no-repeat"></li>
         </ul>
-    
     </div>
-    <div class="aImg" style="background:url(img/title2.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title3.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title4.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title5.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title6.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title7.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title8.jpg)no-repeat"></div>
-    <div class="aImg" style="background:url(img/title9.jpg)no-repeat"></div>
+    <div class="wrapper">
+        <ul>
+            <li class="one">
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="《映山红》大型浪漫史诗电视剧 四个女人的命运成长记 "></a>
+            </li>
+            <li class="one">
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="刘德华反町隆史《全职杀手》瞄准戛纳 "></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="《安居》明星云集 打造棚改第一剧 "></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="《小熊尼奥之梦境小镇》寓教于乐梦想成真！"></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="《黄金血道》吴樾硬汉也柔情 杜志国隔空催生杜淳"></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="黑楼孤魂曾因吓死人而被迫停映 《诡八楼》携孽冤"></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="感受青春正能量 听听我们在说什么"></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="《天际浩劫》外星人入侵"></a>
+            </li>
+            <li>
+                <a target="_blank"   href="http://vod.kankan.com/v/92/92773.shtml" title="《大话3》吴京颠覆形象 网友猜唐三藏老妈是谁"></a>
+            </li>
+        </ul>
+    </div>
     <div class="left"></div>
-    <div class="right"></div>
     <div class="little">
         <ul>
-            <li class="iImg"><img src="img/little1.jpg" alt="映山红" title="《映山红》大型浪漫史诗电视剧 四个女人的命运成长记 "></li>
+            <li class="iImg border"><img src="img/little1.jpg" alt="映山红" title="《映山红》大型浪漫史诗电视剧 四个女人的命运成长记 "></li>
             <li class="iImg"><img src="img/little2.jpg" alt="全职杀手" title="刘德华反町隆史《全职杀手》瞄准戛纳"></li>
             <li class="iImg"><img src="img/little3.jpg" alt="" title="《安居》明星云集 打造棚改第一剧"></li>
             <li class="iImg"><img src="img/little4.jpg" alt="" title="《小熊尼奥之梦境小镇》寓教于乐梦想成真！"></li>
             <li class="iImg"><img src="img/little5.jpg" alt="" title="《黄金血道》吴樾硬汉也柔情 杜志国隔空催生杜淳"></li>
             <li class="iImg"><img src="img/little6.jpg" alt="" title="黑楼孤魂曾因吓死人而被迫停映 《诡八楼》携孽冤来袭"></li>
             <li class="iImg"><img src="img/little7.jpg" alt="" title="感受青春正能量 听听我们在说什么"></li>
-            <li class="iImg"><img src="img/little8.jpg" alt="" title="《天际浩劫》上演“大战外星人"></li>
+            <li class="iImg"><img src="img/little8.jpg" alt="" title="《天际浩劫》外星人入侵"></li>
             <li class="iImg"><img src="img/little9.jpg" alt="" title="《大话3》吴京颠覆形象 网友猜唐三藏老妈是谁"></li>
         </ul>
     </div>
+    <div class="right"></div>
 </div>
 
 </div>
