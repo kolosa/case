@@ -1,12 +1,9 @@
 window.onload = function () {
-    var aImg = getClass("iImg");
-    var i = 0
-    setInterval(function () {
-        for (i; i < aImg.length;i++) {
-            aImg[i].parent().className += "on"
-        }
-    }, 30)
-}
+    var adiv = getClass("aImg");
+    var aLi=getClass("iImg");
+
+        };
+
 function getClass(name) {
     if (document.getElementsByClassName) {
         return document.getElementsByClassName(name)
