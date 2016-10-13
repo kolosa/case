@@ -31,7 +31,8 @@ window.onload = function () {
             return
         }
         iNowUlLeft--;
-        aLitui.style.left =-170 * iNowUlLeft + "px";
+        //aLitui.style.left =-170 * iNowUlLeft + "px";
+        startMove(aLitui, {left: -170 * iNowUlLeft})
     };
 
 
@@ -40,7 +41,8 @@ window.onload = function () {
             return
         }
             iNowUlLeft++;
-            aLitui.style.left = -170 * iNowUlLeft + "px";
+            //aLitui.style.left = -170 * iNowUlLeft + "px";
+        startMove(aLitui, {left: -170 * iNowUlLeft})
         }
 
 };
