@@ -1,32 +1,48 @@
 window.onload = function () {
-    var aAll =document.getElementById("all").getElementsByTagName("li");
-    var aWra=document.getElementById("wra").getElementsByTagName("li");
-    var oBtnl=document.getElementById("pre").getElementsByTagName("li");
-    var obtnr=document.getElementById("next").getElementsByTagName("li");
-    var aLitli=document.getElementById("nav").getElementsByTagName("li");
-    var iNow=0
-    var i=0;
-
-    for(i=0;i<aLitli.length;i++){
-        aLitli[i].index=i;
-        aLitli[i].onclick=function(){
+    var aAll = document.getElementById("all").getElementsByTagName("li");
+    var aWra = document.getElementById("wra").getElementsByTagName("li");
+    var oBtnl = document.getElementById("pre");
+    var oBtnr = document.getElementById("next");
+    var aLitli = document.getElementById("nav").getElementsByTagName("li");
+    var aLitui = document.getElementById("nav").getElementsByTagName("ul")[0];
+    var iNow = 0;
+    var iNowUlLeft = 0;
+    var i = 0;
+    for (i = 0; i < aLitli.length; i++) {
+        aLitli[i].index = i;
+        aLitli[i].onclick = function () {
             clearInterval();
-            for(i=0;i<aLitli.length;i++){
-                if(iNow==this.index){
+            for (i = 0; i < aLitli.length; i++) {
+                if (iNow == this.index) {
                     return
                 }
-                aLitli[i].className="iImg";
-                clearInterval( aAll[i].timer);
-                aAll[i].style.filter='alpha(opacity:0)';
-                aAll[i].style.opacity=0;
+                aLitli[i].className = "iImg";
+                clearInterval(aAll[i].timer);
+                aAll[i].style.filter = 'alpha(opacity:0)';
+                aAll[i].style.opacity = 0;
             }
-            this.className="iImg border";
-            startMove(aAll[this.index],{opacity:100});
-            iNow=this.index
+            this.className = "iImg border";
+            startMove(aAll[this.index], {opacity: 100});
+            iNow = this.index
         }
     }
-};
+    oBtnl.onclick = function () {
+        if(aLitui.style.left==-680){
+            return
+        }
+        iNowUlLeft--;
+        aLitui.style.left = 170 * iNowUlLeft + "px";
+    };
+    oBtnr.onclick = function () {
+        if(aLitui.style.left<=0){
+            return
+        }else{
+            iNowUlLeft++;
+            aLitui.style.left = 170 * iNowUlLeft + "px";
+        }
 
+    }
+};
 function getClass(name) {
     if (document.getElementsByClassName) {
         return document.getElementsByClassName(name)
