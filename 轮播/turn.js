@@ -27,21 +27,22 @@ window.onload = function () {
         }
     }
     oBtnl.onclick = function () {
-        if(aLitui.style.left==-680){
+        if( iNowUlLeft==0){                    //双等，left是上一个
             return
         }
         iNowUlLeft--;
-        aLitui.style.left = 170 * iNowUlLeft + "px";
+        aLitui.style.left =-170 * iNowUlLeft + "px";
     };
+
+
     oBtnr.onclick = function () {
-        if(aLitui.style.left<=0){
+        if( iNowUlLeft>=5){
             return
-        }else{
+        }
             iNowUlLeft++;
-            aLitui.style.left = 170 * iNowUlLeft + "px";
+            aLitui.style.left = -170 * iNowUlLeft + "px";
         }
 
-    }
 };
 function getClass(name) {
     if (document.getElementsByClassName) {
