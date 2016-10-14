@@ -1,4 +1,5 @@
 window.onload = function () {
+    var aDiv=document.getElementById("wra");
     var aAll = document.getElementById("all").getElementsByTagName("li");
     var aWra = document.getElementById("wra").getElementsByTagName("li");
     var oBtnl = document.getElementById("pre");
@@ -36,10 +37,10 @@ window.onload = function () {
         }
         turn()
     },3000);
-    aAll.onmouseover=function(){
+    aDiv.onmouseover=function(){
         clearInterval(timer);
     };
-    aAll.onmouseout=function(){
+    aDiv.onmouseout=function(){
         timer=setInterval(function(){
             iNow++;
             if(iNow>= aLitli.length){
