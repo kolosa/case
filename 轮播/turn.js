@@ -1,5 +1,5 @@
 window.onload = function () {
-    var aDiv=document.getElementById("wra");
+    var aDiv=document.getElementById("par");
     var aAll = document.getElementById("all").getElementsByTagName("li");
     var aWra = document.getElementById("wra").getElementsByTagName("li");
     var oBtnl = document.getElementById("pre");
@@ -30,34 +30,48 @@ window.onload = function () {
         aLitli[iNow].className = "iImg border";
         startMove(aAll[iNow], {opacity: 100});
     }
-    var timer=setInterval(function(){
+    var autoplay=function(){
         iNow++;
         if(iNow>= aLitli.length){
             iNow=0;
         }
+        iNowUlLeft=iNow;
+        if(iNow>5){
+            iNowUlLeft=5
+        }
+        if( iNowUlLeft==0){
+            oBtnl.className="left";
+            //双等，left是上一个
+        }else{
+            oBtnr.className="right show";
+        }
+        if( iNowUlLeft==5){
+            oBtnr.className="right";
+        }else{
+            oBtnl.className="left show";
+        }
+        oBtnl.className="left show";
+
+        startMove(aLitui, {left: -170 * iNowUlLeft});
         turn()
-    },3000);
+    };
+    var timer=setInterval(autoplay,3000);
     aDiv.onmouseover=function(){
         clearInterval(timer);
     };
     aDiv.onmouseout=function(){
-        timer=setInterval(function(){
-            iNow++;
-            if(iNow>= aLitli.length){
-                iNow=0;
-            }
-            turn()
-        },3000);
-    }
+        timer=setInterval(autoplay,3000);
+    };
+
+
     oBtnl.onclick = function () {
         if( iNowUlLeft==0){
-            oBtnl.className="left"
+            oBtnl.className="left";
             //双等，left是上一个
             return
         }
         oBtnr.className="right show";
         iNowUlLeft--;
-        //aLitui.style.left =-170 * iNowUlLeft + "px";
         startMove(aLitui, {left: -170 * iNowUlLeft})
     };
 
@@ -68,13 +82,16 @@ window.onload = function () {
             return
         }
         oBtnl.className="left show";
-        //oBtnr.className="right show"
             iNowUlLeft++;
-            //aLitui.style.left = -170 * iNowUlLeft + "px";
         startMove(aLitui, {left: -170 * iNowUlLeft})
         }
 
 };
+
+
+
+
+//备用函数
 function getClass(name) {
     if (document.getElementsByClassName) {
         return document.getElementsByClassName(name)
