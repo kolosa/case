@@ -11,25 +11,50 @@ window.onload = function () {
     for (i = 0; i < aLitli.length; i++) {
         aLitli[i].index = i;
         aLitli[i].onclick = function () {
-            clearInterval();
-            for (i = 0; i < aLitli.length; i++) {
-                if (iNow == this.index) {
-                    return
-                }
-                aLitli[i].className = "iImg";
-                clearInterval(aAll[i].timer);
-                aAll[i].style.filter = 'alpha(opacity:0)';
-                aAll[i].style.opacity = 0;
+            if (iNow == this.index) {
+                return
             }
-            this.className = "iImg border";
-            startMove(aAll[this.index], {opacity: 100});
-            iNow = this.index
+            iNow = this.index;
+            turn()
         }
     }
+    function turn(){
+        for (i = 0; i < aLitli.length; i++) {
+
+            aLitli[i].className = "iImg";
+            clearInterval(aAll[i].timer);
+            aAll[i].style.filter = 'alpha(opacity:0)';
+            aAll[i].style.opacity = 0;
+        }
+        aLitli[iNow].className = "iImg border";
+        startMove(aAll[iNow], {opacity: 100});
+    }
+    var timer=setInterval(function(){
+        iNow++;
+        if(iNow>= aLitli.length){
+            iNow=0;
+        }
+        turn()
+    },3000);
+    aAll.onmouseover=function(){
+        clearInterval(timer);
+    };
+    aAll.onmouseout=function(){
+        timer=setInterval(function(){
+            iNow++;
+            if(iNow>= aLitli.length){
+                iNow=0;
+            }
+            turn()
+        },3000);
+    }
     oBtnl.onclick = function () {
-        if( iNowUlLeft==0){                    //双等，left是上一个
+        if( iNowUlLeft==0){
+            oBtnl.className="left"
+            //双等，left是上一个
             return
         }
+        oBtnr.className="right show";
         iNowUlLeft--;
         //aLitui.style.left =-170 * iNowUlLeft + "px";
         startMove(aLitui, {left: -170 * iNowUlLeft})
@@ -37,9 +62,12 @@ window.onload = function () {
 
 
     oBtnr.onclick = function () {
-        if( iNowUlLeft>=5){
+        if( iNowUlLeft==5){
+            oBtnr.className="right";
             return
         }
+        oBtnl.className="left show";
+        //oBtnr.className="right show"
             iNowUlLeft++;
             //aLitui.style.left = -170 * iNowUlLeft + "px";
         startMove(aLitui, {left: -170 * iNowUlLeft})
