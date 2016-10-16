@@ -4,7 +4,8 @@ window.onload=function(){
     var oSmall=getClass("small")[0];
     var oFloat=getClass("float-move")[0];
     var oBig=getClass("big")[0];
-    var oBigImg=oBig.getElementsByTagName("img")[0]
+    var oBigImg=oBig.getElementsByTagName("img")[0];
+
 
     oMask.onmouseover=function(){
         oFloat.style.display="block";
@@ -14,36 +15,31 @@ window.onload=function(){
         oFloat.style.display="none";
         oBig.style.display="none";
     };
-    oMask.onmousemove=function(){
+    oMask.onmousemove=function(ev){
         var ev=ev||event;
         var left=ev.clientX;
         var top=ev.clientY;
         var l=left-oMain.offsetLeft-oSmall.offsetLeft-oFloat.offsetWidth/2;
         var t=top-oMain.offsetTop-oSmall.offsetTop-oFloat.offsetHeight/2;
-        var percentX=l/(oMask.offsetWidth-oFloat.offsetWidth);
-        var percentY=t/(oMask.offsetHeight-oFloat.offsetHeight);
 
         if( l<0){
             l=0
         } else if(l>oMask.offsetWidth-oFloat.offsetWidth){
-            oFloat.style.left=oMask.offsetWidth-oFloat.offsetWidth+"px"
-        }
-        else
-        {
-                oFloat.style.left=l+"px"
+            l=oMask.offsetWidth-oFloat.offsetWidth
         }
         if(t<0){
             t=0
         }else if(t>oMask.offsetHeight-oFloat.offsetHeight) {
-            oFloat.style.top = oMask.offsetHeight - oFloat.offsetHeight + "px"
-        }else
-            {
-                oFloat.style.top=t+"px"
-            }
-        oBigImg.style.left=-percentX*(oBigImg.offsetWidth)+"px";
-        oBigImg.style.top=-percentY*(oBigImg.offsetHeight)+"px";
+            t = oMask.offsetHeight - oFloat.offsetHeight
         }
-    };
+        oFloat.style.left=l+"px";
+        oFloat.style.top=t+"px";
+        var percentX=l/(oMask.offsetWidth-oFloat.offsetWidth);
+        var percentY=t/(oMask.offsetHeight-oFloat.offsetHeight);
+        oBigImg.style.left=-percentX*(oBigImg.offsetWidth-oBig.offsetWidth)+"px";
+        oBigImg.style.top=-percentY*(oBigImg.offsetHeight-oBig.offsetHeight)+"px";
+    }
+};
 
 function getClass(name) {
     if (document.getElementsByClassName) {
@@ -60,6 +56,3 @@ function getClass(name) {
     }
 }
 
-//
-//-oBig.offsetWidth)
-//-oBig.offsetHeight
