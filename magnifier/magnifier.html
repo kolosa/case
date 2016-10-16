@@ -5,12 +5,14 @@
     <title>Title</title>
     <style>
         .main{
-            width: 800px;
+            width: 950px;
             height: 600px;
             position: relative;
         }
         .small{
             position: relative;
+            width: 400px;
+            height: 320px;
         }
         .mask{
             position: absolute;
@@ -18,6 +20,7 @@
             height:100%;
             background-color: #000000;
             opacity: 0;
+            z-index:1;
         }
         .float-move{
             width: 100px;
@@ -25,9 +28,7 @@
             position: absolute;
             background-color: #fff;
             opacity: 0.3;
-            top: 0px;
-            left: 0px;
-            display: none;
+            display:none;
         }
         .big{
             width: 400px;
@@ -36,25 +37,23 @@
             position: absolute;
             left:420px;
             top:0px;
-            
+            display:none;
+
         }
         .big img{
             position: absolute;
-            top: 0;
-            left: 0;
         }
     </style>
 </head>
 <body>
 <div class="main" id="main-id">
     <div class="small" id="small-id">
-        <span class="mask"></span>
+        <a href="https://github.com/"> <span class="mask"></span></a>
         <span class="float-move"></span>
-        <a href="https://github.com/"><img src="img/sma.jpg" alt="放大给爷看看"></a>
+        <img src="img/sma.jpg" alt="放大给爷看看">
     </div>
     <div class="big">
-        <a href="https://github.com/"><img src="img/big.jpg" alt="放大" longdesc="https://github.com/"></a>
-
+         <img src="img/big.jpg" alt="放大">
     </div>
 </div>
 
