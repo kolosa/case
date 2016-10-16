@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            width: 800px;
+            height: 600px;
+            position: relative;
+        }
+        .small{
+            position: relative;
+        }
+        .mask{
+            position: absolute;
+            width: 100%;
+            height:100%;
+            background-color: #000000;
+            opacity: 0;
+        }
+        .float-move{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: #fff;
+            opacity: 0.3;
+            top: 0px;
+            left: 0px;
+            display: none;
+        }
+        .big{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            left:420px;
+            top:0px;
+            
+        }
+        .big img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="main" id="main-id">
+    <div class="small" id="small-id">
+        <span class="mask"></span>
+        <span class="float-move"></span>
+        <a href="https://github.com/"><img src="img/sma.jpg" alt="放大给爷看看"></a>
+    </div>
+    <div class="big">
+        <a href="https://github.com/"><img src="img/big.jpg" alt="放大" longdesc="https://github.com/"></a>
+
+    </div>
+</div>
+
+</body>
+<script src="js.js">
+
+</script>
+</html>
