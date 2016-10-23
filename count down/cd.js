@@ -36,7 +36,7 @@ function undate(){
         oDateEnd.setSeconds(0);
 
         var iRes = (oDateEnd.getTime() - oDateNow.getTime()) / 1000;
-        if (ires<0){
+        if (iRes<0){
             return;
         }
         var iDay = parseInt(iRes / 86400);
