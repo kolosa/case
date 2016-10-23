@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>倒计时</title>
-    <style></style>
+    <style>
+        #go{
+            width: 50px;
+            height: 20px;
+            background-color: #8D8692;
+        }
+        #date p{
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
 </head>
-<script></script>
+<script src="cd.js"></script>
 <body>
 <div id="main">
     <div id="in">
@@ -14,20 +24,20 @@
         <span class="two">年</span>
         <input type="text" class="text" value="10">
         <span class="three">月</span>
-        <input type="text" class="text" value="18">
+        <input type="text" class="text" value="30">
         <span class="four">日</span>
     </div>
-    <a id="go"></a>
+    <a id="go">go000000000000</a>
     <p id="target">
         现在距离<strong>2016年10月30日</strong>
         还剩：
     </p>
 
     <div id="date">
-        <p id="day">00</p>日
-        <p id="hour">00</p>时
-        <p id="min">00</p>分
-        <p id="sec"></p>秒
+        <p id="day">000</p><p>日</p>
+        <p id="hour">00</p><p>时</p>
+        <p id="min">00</p><p>分</p>
+        <p id="sec">00</p><p>秒</p>
     </div>
 
 </div>
