@@ -5,46 +5,75 @@
     <title>Title</title>
     <script src="apple.js"></script>
     <style>
-        .nav{
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nav{
             margin: auto;
             width: 980px;
             height: 200px;
-            border: solid 2px;
         }
-        .img{
+        #img{
+
             width: 100%;
             height: 160px;
         }
-        .aimg{
-            width: 800px;
-            margin: auto;
+        #oimg{
+            margin-left: 100px;
+            position:relative;
+            width: 780px;
+            height: 160px;
+            overflow: hidden;
         }
-        .img img{
-            width: 16.2%;
-            height: 100%;
+        #img ul{
+            position: absolute;
+            width: 1560px;
+            height: 160px;
         }
-        .img-nav{
+        #img ul li{
+            position: absolute;
+            width: 130px;
+            height: 160px;
+            float: left;
+            list-style:none;
+        }
+        #img ul li img {
+            width: 130px;
+            height: 140px;
+        }
+
+        #img-nav{
             width: 100%;
             height: 40px;
             text-align: center;
-            background-color: #8D8692;
+            background: url("img/nav.png")no-repeat;
         }
     </style>
 </head>
 <body>
-<div class="nav">
-    <div class="img">
-        <div class="aimg">
-            <img src="img/1.jpg">
-            <img src="img/2.jpg">
-            <img src="img/3.jpg">
-            <img src="img/4.jpg">
-            <img src="img/5.jpg">
-            <img src="img/6.jpg">
+<div id="nav">
+    <div id="img">
+        <div id="oimg">
+            <ul>
+                <li><img src="img/1.jpg" alt=""></li>
+                <li><img src="img/2.jpg" alt="" ></li>
+                <li><img src="img/3.jpg" alt="" ></li>
+                <li><img src="img/4.jpg" alt=""></li>
+                <li><img src="img/5.jpg" alt=""></li>
+                <li><img src="img/6.jpg" alt=""></li>
+                <li><img src="img/7.jpg" alt=""></li>
+                <li><img src="img/8.jpg" alt=""></li>
+                <li><img src="img/9.jpg" alt=""></li>
+                <li><img src="img/10.jpg" alt=""></li>
+                <li><img src="img/11.jpg" alt=""></li>
+                <li><img src="img/12.jpg" alt=""></li>
+            </ul>
         </div>
 
+       
     </div>
-    <div class="img-nav">
+    <div id="img-nav">
 
     </div>
 </div>

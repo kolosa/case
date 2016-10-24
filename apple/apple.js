@@ -1,3 +1,11 @@
+window.onload=function(){
+    var oLi=document.getElementById("oimg").getElementsByTagName("li");
+    for(var i= 0;i<oLi.length;i++){
+        oLi[i].style.left=i*130+"px";
+    }
+}
+
+
 function startMove(obj, oTarget, iType, fnCallBack, fnDuring)
 {
     var fnMove=null;
