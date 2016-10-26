@@ -3,9 +3,12 @@ window.onload=function(){
     for(var i= 0;i<oLi.length;i++){
         oLi[i].style.left=i*130+"px";
     }
-}
+};
 
-
+var MOVE_TYPE={
+    BUFFER: 1,
+    FLEX: 2
+};
 function startMove(obj, oTarget, iType, fnCallBack, fnDuring)
 {
     var fnMove=null;
@@ -16,10 +19,10 @@ function startMove(obj, oTarget, iType, fnCallBack, fnDuring)
 
     switch(iType)
     {
-        case MIAOV_MOVE_TYPE.BUFFER:
+        case MOVE_TYPE.BUFFER:
             fnMove=miaovDoMoveBuffer;
             break;
-        case MIAOV_MOVE_TYPE.FLEX:
+        case MOVE_TYPE.FLEX:
             fnMove=miaovDoMoveFlex;
             break;
     }
