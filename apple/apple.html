@@ -25,6 +25,8 @@
             width: 780px;
             height: 160px;
             overflow: hidden;
+            font: 12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+            color: #7F7F7F;
         }
         #img ul{
             position: absolute;
@@ -37,6 +39,7 @@
             height: 160px;
             float: left;
             list-style:none;
+            text-align: center;
         }
         #img ul li img {
             width: 130px;
@@ -44,11 +47,30 @@
         }
 
         #img-nav{
+            position: relative;
             width: 100%;
+            margin-top: 5px;
             height: 40px;
             text-align: center;
             background: url("img/nav.png")no-repeat;
+            font: 12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+            color: #7F7F7F;
         }
+        #img-nav a{
+            line-height:30px;
+            margin-left: 10px ;
+
+        }
+        #img-nav a:hover{color:#555;}
+        .down{
+            background-image:url("img/down.png") ;
+            display: block;
+            height: 8px;
+            margin: 0 0 -8px -7px;
+            position: absolute;
+            width: 15px;
+        }
+
     </style>
 </head>
 <body>
@@ -56,25 +78,28 @@
     <div id="img">
         <div id="oimg">
             <ul>
-                <li><img src="img/1.jpg" alt=""></li>
-                <li><img src="img/2.jpg" alt="" ></li>
-                <li><img src="img/3.jpg" alt="" ></li>
-                <li><img src="img/4.jpg" alt=""></li>
-                <li><img src="img/5.jpg" alt=""></li>
-                <li><img src="img/6.jpg" alt=""></li>
-                <li><img src="img/7.jpg" alt=""></li>
-                <li><img src="img/8.jpg" alt=""></li>
-                <li><img src="img/9.jpg" alt=""></li>
-                <li><img src="img/10.jpg" alt=""></li>
-                <li><img src="img/11.jpg" alt=""></li>
-                <li><img src="img/12.jpg" alt=""></li>
+                <li><img src="img/1.jpg" alt="">iPod shuffle</li>
+                <li><img src="img/2.jpg" alt="">iPod nano</li>
+                <li><img src="img/3.jpg" alt="">iPod classic</li>
+                <li><img src="img/4.jpg" alt="">iPod touch</li>
+                <li><img src="img/5.jpg" alt="">Apple TV</li>
+                <li><img src="img/6.jpg" alt="">Accessories</li>
+                <li><img src="img/7.jpg" alt="">Download iTunes 10</li>
+                <li><img src="img/8.jpg" alt="">iTunes Gift Cards</li>
+                <li><img src="img/9.jpg" alt="">Nike + iPod</li>
+                <li><img src="img/10.jpg" alt="">(PRODUCT) RED</li>
+                <li><img src="img/11.jpg" alt="">MobileMe</li>
+                <li><img src="img/12.jpg" alt="">In-Ear Headphones</li>
+
             </ul>
         </div>
 
        
     </div>
     <div id="img-nav">
-
+        <span class="down" style="left: 435px"></span>
+        <a class="on">Products</a>
+        <a>iTunes and more</a>
     </div>
 </div>
 </body>
