@@ -1,7 +1,9 @@
 window.onload=function(){
     var oLi=document.getElementById("oimg").getElementsByTagName("li");
     var aBtn=document.getElementById("img-nav").getElementsByTagName("a");
+    var oDown=document.getElementById("img-nav").getElementsByTagName("span")[0];
     var oLiSave=[];
+    var timer=null;
     var i=0;
 
     for(var i= 0;i<oLi.length;i++){
@@ -10,28 +12,123 @@ window.onload=function(){
     for(var i= 0;i<oLi.length;i++){
         oLiSave[i]=oLi[i].offsetLeft;
     }
-    aBtn[1].onclick=function(){
-        i=1;
-        startMove(oLi[0],{left:-600},MOVE_TYPE.FLEX)
-        var timer=setInterval(
-            function(){
-                startMove(oLi[i++],{left:-600},MOVE_TYPE.FLEX);
-                if(i>=oLi.length/2){
-                    clearInterval(timer);
-                    next();
-                }
-            },50);
-        function next(){
-            timer=setInterval(function(){
-                startMove(oLi[i],{left:oLiSave[i-oLi.length/2]},MOVE_TYPE.FLEX);
-                i++;
-                if(i>=oLi.length){
-                    clearInterval(timer);
-                }
-            },50)
+    aBtn[0].onclick=function ()
+    {
+        var i=oLi.length-1;
 
+        clearTimeout(timer);
+
+        function next()
+    {
+        var obj=oLi[i];
+        if(i>=oLi.length/2)
+        {
+            startMove(oLi[i], {left: 900}, MOVE_TYPE.FLEX);
+            timer=setTimeout(next, 100);
+            i--;
+        }
+        else
+        {
+            timer=setTimeout(next2, 150);
         }
     }
+
+    function next2()
+    {
+        if(i>=0)
+        {
+            startMove(oLi[i], {left: oLiSave[i]}, MOVE_TYPE.FLEX);
+            timer=setTimeout(next2, 100);
+        }
+        i--;
+    }
+
+    next();
+    startMove(oDown, {left: 435}, MOVE_TYPE.BUFFER);
+}
+
+	aBtn[1].onclick=function ()
+    {
+        var i=0;
+
+        clearTimeout(timer);
+
+        function next()
+        {
+            var obj=oLi[i];
+            if(i<oLi.length/2)
+            {
+                startMove(oLi[i], {left: -200}, MOVE_TYPE.FLEX);
+                timer=setTimeout(next, 100);
+                i++;
+            }
+            else if(i==oLi.length/2)
+            {
+                timer=setTimeout(next2, 150);
+            }
+        }
+
+        function next2()
+        {
+            if(i<oLi.length)
+            {
+                startMove(oLi[i], {left: oLiSave[i-oLi.length/2]}, MOVE_TYPE.FLEX);
+                timer=setTimeout(next2, 100);
+            }
+            i++;
+        }
+        next();
+        startMove(oDown, {left: 525}, MOVE_TYPE.BUFFER);
+    };
+    //存在定时器bug，解决方法，加入判断语句
+    //aBtn[0].onclick=function(){
+    //    i=oLi.length-1;
+    //    clearTimeout(timer);
+    //    startMove(oLi[i],{left:1600},MOVE_TYPE.FLEX)
+    //    var timer=setInterval(
+    //        function(){
+    //            startMove(oLi[i--],{left:1600},MOVE_TYPE.FLEX);
+    //            if(i<=oLi.length/2){
+    //                clearInterval(timer);
+    //                next();
+    //            }
+    //        },50);
+    //    function next(){
+    //        timer=setInterval(function(){
+    //            startMove(oLi[i],{left:oLiSave[i]},MOVE_TYPE.FLEX);
+    //            i--;
+    //            if(i<0){
+    //                clearInterval(timer);
+    //            }
+    //        },50)
+    //    }
+    //    startMove(oDown,{left:435},MOVE_TYPE.FLEX)
+    //}
+    //
+    //
+    //aBtn[1].onclick=function(){
+    //    i=1;
+    //    clearTimeout(timer);
+    //    startMove(oLi[0],{left:-600},MOVE_TYPE.FLEX)
+    //    var timer=setInterval(
+    //        function(){
+    //            startMove(oLi[i++],{left:-600},MOVE_TYPE.FLEX);
+    //            if(i>=oLi.length/2){
+    //                clearInterval(timer);
+    //                next();
+    //            }
+    //        },50);
+    //    function next(){
+    //        timer=setInterval(function(){
+    //            startMove(oLi[i],{left:oLiSave[i-oLi.length/2]},MOVE_TYPE.FLEX);
+    //            i++;
+    //            if(i>=oLi.length){
+    //                clearInterval(timer);
+    //            }
+    //        },50)
+    //    }
+    //    startMove(oDown,{left:525},MOVE_TYPE.FLEX)
+    //}
 
 };
 function getClass(name) {
